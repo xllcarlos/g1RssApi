@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -48,6 +49,14 @@ public class UserModel implements UserDetails {
 
     @Column(name = "role", nullable = false)
     private UserRole role;  // Role do usuario
+
+    @ManyToMany
+    @JoinTable(
+            name = "TB_USERS_CATEGORIES",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    private List<CategoryModel> categories = new ArrayList<>();
 
     public UserModel() {
         this.status = true;
