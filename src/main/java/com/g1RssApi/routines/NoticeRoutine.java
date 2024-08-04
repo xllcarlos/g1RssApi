@@ -20,11 +20,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
+/**
+ * @author Carlos Santos
+ */
 @Component
 @EnableScheduling
 public class NoticeRoutine {
 
-    private final int delay = 36000;
+    private final int delay = 3600000;
 
     @Autowired // Injecao de dependencias
     private NoticeRepository noticeRepository;

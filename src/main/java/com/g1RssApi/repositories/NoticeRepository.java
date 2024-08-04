@@ -9,6 +9,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Gilson Teixeira
+ */
 @Repository
 public interface NoticeRepository extends JpaRepository<NoticeModel, Long> {
 

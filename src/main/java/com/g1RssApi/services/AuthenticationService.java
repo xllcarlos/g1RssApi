@@ -17,6 +17,10 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * @author Carlos Santana
+ * @author Jhonatan Isaias
+ */
 @Service
 public class AuthenticationService {
 

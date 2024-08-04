@@ -5,6 +5,9 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import lombok.*;
 
+/**
+ * @author Gilson Teixeira
+ */
 @Getter
 @Setter
 @NoArgsConstructor

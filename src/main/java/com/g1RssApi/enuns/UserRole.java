@@ -2,6 +2,9 @@ package com.g1RssApi.enuns;
 
 import lombok.Getter;
 
+/**
+ * @author Gilson Teixeira
+ */
 @Getter
 public enum UserRole {
 

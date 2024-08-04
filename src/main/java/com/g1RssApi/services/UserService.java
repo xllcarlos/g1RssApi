@@ -13,6 +13,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Carlos Santos
+ * @author Jhonatan Isaias
+ */
 @Service
 public class UserService {
 

@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-
+/**
+ * @author Jhonatan Isaias
+ */
 @Service
 public class TokenService {
 

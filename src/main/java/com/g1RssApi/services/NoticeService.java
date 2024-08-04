@@ -17,6 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Carlos Santos
+ * @author Jhonatan Isaias
+ */
 @Service
 public class NoticeService {
 

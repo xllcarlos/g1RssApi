@@ -17,6 +17,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 /**
  * Altera as configuracoes padroes do SpringSecurity
  * e definindo novos padroes.
+ *
+ * @author Jhonatan Isaias
  */
 @Configuration
 @EnableWebSecurity

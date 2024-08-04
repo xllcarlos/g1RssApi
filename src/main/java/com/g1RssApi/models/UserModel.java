@@ -1,21 +1,20 @@
 package com.g1RssApi.models;
 
-import com.g1RssApi.dtos.RegisterUserDTO;
 import com.g1RssApi.enuns.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
+/**
+ * @author Gilson Teixeira
+ */
 @Getter
 @Setter
 @Entity(name = "User")

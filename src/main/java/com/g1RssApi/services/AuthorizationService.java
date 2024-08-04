@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
  * Chamado automaticamente pelo SpringSecurity
  * toda vez que um usuario precisar se autenticar
  * implementando o UserDetailsService.
+ *
+ * @author Jhonatan Isaias
  */
 @Service
 public class AuthorizationService implements UserDetailsService {
