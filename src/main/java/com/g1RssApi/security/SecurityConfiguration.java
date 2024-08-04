@@ -34,9 +34,10 @@ public class SecurityConfiguration {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Sem guardar estado
                 .authorizeHttpRequests((authorize -> authorize
-                        .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/categories").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/auth/register", "auth/login").permitAll()  // AuthenticationController
+                        .requestMatchers(HttpMethod.POST, "/categories", "/notices").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/categories", "/notices").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/categories", "/notices").permitAll()
                         .anyRequest().authenticated()))
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
