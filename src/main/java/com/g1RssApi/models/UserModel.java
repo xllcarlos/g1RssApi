@@ -41,7 +41,7 @@ public class UserModel implements UserDetails {
     private String phone;  // Telefone
 
     @Column(name = "birthdate", nullable = false)
-    private Date birthdate;  // Data de nascimento
+    private LocalDate birthdate;  // Data de nascimento
 
     @Column(name = "status", nullable = false)
     private Boolean status;  // Status do usuario
