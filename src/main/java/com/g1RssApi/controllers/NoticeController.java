@@ -4,6 +4,7 @@ import com.g1RssApi.dtos.NoticeDTO;
 import com.g1RssApi.services.NoticeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -66,6 +67,16 @@ public class NoticeController {
     @DeleteMapping("{id}")
     public ResponseEntity deleteNotice(@PathVariable(name = "id") Long id) {
         return this.noticeService.deleteNotice(id);
+    }
+
+    /**
+     * Rota para retornar o feed de noticias.
+     * @param authorization token do usuario.
+     * @return ResponseEntity provido pelo NoticeService.
+     */
+    @GetMapping("/feed")
+    public ResponseEntity getFeed(@RequestHeader(HttpHeaders.AUTHORIZATION) String authorization) {
+        return this.noticeService.getFeed(authorization);
     }
 
 }
