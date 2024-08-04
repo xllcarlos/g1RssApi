@@ -6,7 +6,6 @@ import com.g1RssApi.dtos.RegisterUserDTO;
 import com.g1RssApi.enuns.UserRole;
 import com.g1RssApi.models.UserModel;
 import com.g1RssApi.repositories.UserRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +13,9 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Service
 public class AuthenticationService {
@@ -59,12 +58,20 @@ public class AuthenticationService {
         UserModel newUser = new UserModel();
 
         newUser.setName(registerUserDTO.name());
+
         newUser.setLogin(registerUserDTO.login());
+
         String encryptedPassword = new BCryptPasswordEncoder().encode(registerUserDTO.password());
         newUser.setPassword(encryptedPassword);
+
         newUser.setEmail(registerUserDTO.email());
+
         newUser.setPhone(registerUserDTO.phone());
-        newUser.setBirthdate(new Date());
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(registerUserDTO.birthdate(), formatter);
+        newUser.setBirthdate(localDate);
+
         newUser.setRole(UserRole.USER);
 
         this.userRepository.save(newUser);
