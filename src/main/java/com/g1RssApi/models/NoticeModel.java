@@ -23,7 +23,7 @@ public class NoticeModel implements Serializable {
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;  // Descricao da noticia
 
-    @Column(name = "image_url")
+    @Column(name = "image_url", columnDefinition = "TEXT")
     private String imageUrl;  // Url da imagem
 
     @Column(name = "pub_date", nullable = false)
